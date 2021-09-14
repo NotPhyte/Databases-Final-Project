@@ -1,5 +1,76 @@
 # Databases-Final-Project
-pg. 3 
+CS 166 Project Description 
+ 
+Tuesday, October 23, 2018 
+ 
+1  Introduction 
+  In this project, we will model and build a database for a mechanics shop. The system will 
+be used track information about customers, cars, mechanics, car ownership, service request and 
+billing information. 
+  The project is divided into three phases: (i) requirement analysis using the ER-model, (ii) 
+Relational  schema  design,  and  (iii)  implementation.  Finally,  the  students  will  to  demo  the 
+complete working system at the end of the quarter. 
+ 
+Phase 1: ER Design 
+ 
+  In  the  first  phase,  you  will  do  the  requirement  analysis  using  ER-model.  All  the  
+requirements can be obtained from Section 2 of this document. 
+  After  this  phase  you  should  generate  and  ER-diagram  with  any  o ther  supporting 
+documentation, describing the assumptions you made. For the ER-diagram you can use any 
+graphical editor you want, and you should finally create a PDF file using ER notations from the 
+lectures/lab/book. You have to submit all your files compressed into a single file through iLearn 
+by the deadline. In this phase, we will evaluate the correctness of your ER-diagram. You can 
+make reasonable assumptions on your design, as long as: 
+x  That you state them clearly in the documentation for this phase. 
+x  They do not contradict the system requirements analysis we provide. 
+The due date for this phase is: Nov 9th 2018. 
+ 
+Phase 2: Relational Schema Design 
+  In this phase, we will provide you with a common (final) ER-diagram (so that the whole 
+class will proceed with the same design). This final ER-diagram will be the starting point for the 
+second phase, which involves the creation of the relational schema. 
+  Your task in this phase will be to translate the provided ER d esign to a PostgreSQL 
+relational database schema. The database schema will be in a form of a single executable SQL 
+script (*.sql file with SQL statements), and you have to turn in your script through iLearn. 
+  For  this  phase,  you  will  be  evaluated  for  the  correctness  and  completeness  of  your 
+relational  schema.  You  may  find  some  constraints  in  the  model  and/or  system  requirement 
+July 12, 2021
+ 
+analysis that are not possible to represent or enforce in the relational schema. You may specify 
+all these issues in the documentation and it will be considered in your final grade. 
+  The due date for this phase is  Nov 16th 2018. 
+ 
+Phase 3: Implementation 
+Your tasks in this phase will be: 
+x  Develop a client application using the Java Database Connector (jdbc) for psql. 
+x  Use the client application to support specific functionality and queries for your online 
+booking system. 
+In this phase, we will provide you with a create.sql that recreates the relational schema of 
+phase 2. You will use this schema to test and demo your application to us. Additionally, we will 
+give you a collection of .csv files containing dummy data that are compatible with the provided 
+relational schema. You will have to create your own .sql scripts to insert the data from the given 
+.csv files into the database. 
+Finally, we will give you a skeleton code for the client application. The code will be in Java 
+and will contain some basic functionality that will help you to communicate with the database 
+and issue various .sql statements. You will have to implement your own code for a certain 
+number of functions, described in more detail below: 
+x  Add Customer Function 
+Add a new customer into the database. You should provide an interface that takes as 
+input the information of a new customer (i.e. first, last name, phone, address) and checks 
+if the provided information are valid based on the constraints of the database schema. 
+x  Add Mechanic 
+Add a new mechanic into the database. You should provide an interface that takes as 
+input the information of a new mechanic (i.e. first, last name, specialty, experience) and 
+checks  if  the  provided  information  is  valid  based  on  the  constraints  of  the  database 
+schema. 
+x  Add Car 
+This  function  should  allow  for  adding  a  new  car  into  the  database.  You  should 
+provide an interface that takes as input the information of a new car (i.e. vin, make, 
+model, year) checking if the provided information are valid based on the constrains of the 
+database schema. 
+x  Initiate a Service Request 
+This function will allow you to add a service request for a customer into the database. 
+Given a last name, the function should search the database of existing customers. If man
  
 customers match, a menu option should appear listing all customers with the given last 
 name  asking  the  user  to  choose  which  customer  has  initiated  the  service  request.  
@@ -36,7 +107,7 @@ according to that cost. List their first, last name and total bill.
  
 We strongly recommended that you start early and allocate at least 25 hours per person to 
 get it finished. Don’t forget that each group has to schedule a presentation to show the system 
-pg. 4 
+
  
 running with all its functionalities to the TA. Slots for the presentation will be available online 
 on a first come-first served basis. 
@@ -77,7 +148,7 @@ changes/extensions, etc. (10%)
 x  The customer has a first name, last name, phone number and address. 
 x  Customers can own many different cars 
 TBD
-pg. 5 
+
  
 x  Customers may bring any of their car for service 
 x  Customers bring their car for service at a certain date indicating to the mechanic if 
